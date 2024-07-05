@@ -29,16 +29,17 @@ export const PinContainer = ({
   };
 
   return (
-    <Link
+    <div
       className={cn(
         "relative group/pin z-50  cursor-pointer",
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={href || "/"}
     >
-      <div
+      <Link
+        target="_blank"
+        href={href || "/"}
         style={{
           perspective: "1000px",
           transform: "rotateX(70deg) translateZ(0deg)",
@@ -53,9 +54,9 @@ export const PinContainer = ({
         >
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>
-      </div>
+      </Link>
       <PinPerspective title={title} href={href} />
-    </Link>
+    </div>
   );
 };
 
