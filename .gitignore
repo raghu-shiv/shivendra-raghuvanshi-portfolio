@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.npm-cache
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -25,8 +26,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# local env files (keep .env and .env.example committed with demo values)
 .env*.local
+.env.sentry-build-plugin
 
 # vercel
 .vercel
@@ -34,9 +36,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Sentry Config File
-.env.sentry-build-plugin
-
-# Sentry Config File
-.env.sentry-build-plugin
