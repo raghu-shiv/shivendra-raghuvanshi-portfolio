@@ -1,0 +1,11 @@
+---
+description: Restrict agent access to this portfolio repository only
+alwaysApply: true
+---
+
+# Workspace boundary
+
+- Work only inside `shivendra-raghuvanshi-portfolio` (this repository root).
+- Do not read, write, execute, or depend on files outside this folder unless the user explicitly expands scope.
+- Prefer project-relative paths (for example `components/Hero.tsx`) over absolute paths outside the repo.
+- Shell commands, dependency installs, and builds must run from this repository root.

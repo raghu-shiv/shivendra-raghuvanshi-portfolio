@@ -1,0 +1,13 @@
+---
+description: Environment variable and secrets conventions
+globs: .env*,sentry*.ts,next.config.mjs
+alwaysApply: false
+---
+
+# Environment
+
+- `.env` and `.env.example` contain **demo values only** and may be committed.
+- `.env.local` and `.env.sentry-build-plugin` are gitignored — use for real secrets.
+- Sentry runtime DSN: `NEXT_PUBLIC_SENTRY_DSN` (client) and `SENTRY_DSN` (server/edge). Empty DSN disables Sentry (`sentry.env.ts`).
+- Sentry build: `SENTRY_AUTH_TOKEN` in `.env.sentry-build-plugin`; `SENTRY_ORG` and `SENTRY_PROJECT` in `.env` or CI.
+- When adding variables, update `.env.example`, `README.md`, and `AGENTS.md`.

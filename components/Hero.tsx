@@ -27,8 +27,8 @@ const Hero = () => {
 
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Welcome to Develop with Shiven!
+          <h2 className="tracking-widest text-sm text-center text-blue-100 max-w-80">
+            Welcome to Shivendra's Portfolio!
           </h2>
 
           <TextGenerateEffect
@@ -42,7 +42,7 @@ const Hero = () => {
 
           <a href="#about">
             <MagicButton
-              title="Show my work"
+              title="About Me"
               icon={<FaLocationArrow />}
               position="right"
             />

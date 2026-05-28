@@ -3,6 +3,8 @@ import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 
+const myEmail = process.env.NEXT_PUBLIC_EMAIL;
+
 const Footer = () => {
   return (
     <footer id="contact" className="w-full pt-20 pb-10">
@@ -23,7 +25,7 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="mailto:developer.raghuvanshi@gmail.com">
+        <a href={`mailto:${myEmail}`}>
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
@@ -33,15 +35,17 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright ©2024, Develop with Shiven
+          Copyright (c) {new Date().getFullYear()}, Shivendra Raghuvanshi
         </p>
         <div className="py-3 flex items-center md:gap-3 gap-6">
-          {socialMedia.map(({ id, img }) => (
+          {socialMedia.map(({ id, img, link }) => (
             <div
               key={id}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 border rounded-lg border-black-300"
             >
-              <img src={img} alt={`icon-${id}`} width={20} height={20} />
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <img src={img} alt={`icon-${id}`} width={20} height={20} />
+              </a>
             </div>
           ))}
         </div>

@@ -1,5 +1,5 @@
 "use client";
-import { animate, motion } from "framer-motion";
+import { animate, motion, type AnimationSequence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/utils/cn";
 import { GoCopilot } from "react-icons/go";
@@ -22,7 +22,7 @@ export function SkillCard() {
 const Skeleton = () => {
   const scale = [1, 1.1, 1];
   const transform = ["translateY(0px)", "translateY(-4px)", "translateY(0px)"];
-  const sequence = [
+  const sequence: AnimationSequence = [
     [
       ".circle-1",
       {
@@ -66,11 +66,11 @@ const Skeleton = () => {
   ];
 
   useEffect(() => {
-    // @ts-ignore
-    animate(sequence, {
+    const controls = animate(sequence, {
       repeat: Infinity,
       repeatDelay: 1,
     });
+    return () => controls.stop();
   }, []);
   return (
     <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">

@@ -1,0 +1,15 @@
+---
+description: Dependency upgrade and install conventions for this Next.js portfolio
+globs: package.json,package-lock.json,next.config.mjs
+alwaysApply: false
+---
+
+# Dependency management
+
+- Keep `next`, `eslint-config-next`, `react`, and `react-dom` on compatible major versions (Next 16 + React 19 for this project).
+- `@react-three/fiber` v9 requires React `>=19 <19.3`; align React types with React 19.
+- Use Tailwind CSS v3 with `tailwind.config.ts` until the project is migrated to Tailwind v4 CSS-first config.
+- Prefer maintained packages (`lottie-react` over deprecated `react-lottie`).
+- After dependency changes: delete stale lockfile conflicts, run `npm install`, then `npm run build` and `npm run dev` to verify.
+- Node 20+ required (`engines` in `package.json`, `.nvmrc` pins 22).
+- Sentry credentials live in env files — never hardcode DSN or auth tokens in `sentry.*.config.ts`.

@@ -192,12 +192,19 @@ const ShaderMaterial = ({
   uniforms: Uniforms;
 }) => {
   const { size } = useThree();
-  const ref = useRef<THREE.Mesh>();
+  const ref = useRef<THREE.Mesh>(null);
+  const timerRef = useRef<THREE.Timer | null>(null);
   let lastFrameTime = 0;
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!ref.current) return;
-    const timestamp = clock.getElapsedTime();
+    if (!timerRef.current) {
+      timerRef.current = new THREE.Timer();
+      // Use Page Visibility API so elapsed time doesn't jump on tab switch.
+      timerRef.current.connect(document);
+    }
+    timerRef.current.update();
+    const timestamp = timerRef.current.getElapsed();
     if (timestamp - lastFrameTime < 1 / maxFps) {
       return;
     }

@@ -3,15 +3,17 @@ import React from "react";
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 
+const borderDurations = [12000, 14000, 16000, 18000];
+
 const Experience = () => {
   return (
-    <div className="w-full py-20">
+    <div id="experience" className="w-full py-20">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map(({ id, thumbnail, title, desc }) => (
+        {workExperience.map(({ id, thumbnail, title, desc }, index) => (
           <Button
             key={id}
             borderRadius="1.75rem"
@@ -22,7 +24,7 @@ const Experience = () => {
               borderRadius: `calc(1.75rem* 0.96)`,
             }}
             className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-            duration={Math.floor(Math.random() * 10000) + 10000}
+            duration={borderDurations[index % borderDurations.length]}
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <img

@@ -5,9 +5,13 @@ import { ThemeProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const appName =
+  process.env.NEXT_PUBLIC_APP_NAME ?? "Shivendra Raghuvanshi Portfolio";
+
 export const metadata: Metadata = {
-  title: "Develop with Shiven",
-  description: "Shivendra's portfolio cum online IT courses website and blog",
+  title: appName,
+  description:
+    "Portfolio of Shivendra Raghuvanshi — Fullstack Developer based in India.",
 };
 
 export default function RootLayout({
