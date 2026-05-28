@@ -27,6 +27,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files (keep .env and .env.example committed with demo values)
+.env
 .env*.local
 .env.sentry-build-plugin
 
