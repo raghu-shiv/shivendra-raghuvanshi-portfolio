@@ -96,19 +96,11 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Festival Poster Maker for Business",
-    des: "AI-powered festival poster maker for businesses with instant branded social creatives.",
+    title: "Subtitle Generator & WhatsApp Bulk Messenger",
+    des: "AI-powered Subtitle Generator for automatic transcription and a WhatsApp Bulk Messenger for streamlined mass communication.",
     img: "/p3.png",
-    iconLists: [
-      "/next.svg",
-      "/re.svg",
-      "/tail.svg",
-      "/ts.svg",
-      "/fm.svg",
-      "/fabric.svg",
-      "/cloud.svg",
-    ],
-    link: "https://github.com/raghu-shiv",
+    iconLists: ["/python.svg", "/selenium.svg", "/openai.svg", "/ffmpeg.svg"],
+    link: "https://github.com/raghu-shiv/Python-Projects",
   },
   {
     id: 4,
