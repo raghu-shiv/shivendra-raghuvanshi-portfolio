@@ -112,8 +112,8 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Full Stack SaaS Application",
-    des: "Modern SaaS MVP starter platform with scalable architecture, analytics, auth, and payments.",
+    title: "Full Stack ERP Application",
+    des: "Modern ERP MVP starter platform with scalable architecture, analytics, auth, and payments.",
     img: "/p4.png",
     iconLists: [
       "/next.svg",
@@ -123,7 +123,7 @@ export const projects = [
       "/cloud.svg",
       "/prisma.svg",
     ],
-    link: "https://github.com/raghu-shiv",
+    link: "https://github.com/raghu-shiv/erp-app",
   },
 ];
 
